@@ -8,12 +8,21 @@
  * @author pedro
  */
 public abstract class Usuario {
-    protected String nome;
-    protected String cpf;
-    protected int id;
-    protected String endereco;
-    protected String telefone;
-    protected String senha;
+    private String nome;
+    private String cpf;
+    private String id;
+    private String endereco;
+    private String telefone;
+    private String senha;
+
+    public Usuario(String nome, String cpf, String id, String endereco, String telefone, String senha) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.id = id;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.senha = senha;
+    }
     
     public String getNome() {
         return nome;
@@ -31,13 +40,15 @@ public abstract class Usuario {
         this.cpf = cpf;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
+
+    
 
     public String getEndereco() {
         return endereco;

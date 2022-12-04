@@ -18,24 +18,33 @@ public class TpLanchonete {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         Scanner sc = new Scanner(System.in);
-        Funcionario f = new Funcionario(" teste", "213232", "123");
-        System.out.println(" digite o cargo ");
-        String cargo = sc.next();
-        System.out.println(" salario: ");
-        String salario = sc.next();
-        System.out.println(" id: ");
-        String id = sc.next();
-        Funcionario f2 = new Funcionario(cargo,salario,id);
+       Scanner sc = new Scanner(System.in);
+        Funcionario f = new Funcionario("pedro", "213232","adm");
+        System.out.println(" digite o nome ");
+        String nome = sc.next();
+        System.out.println(" cpf: ");
+        String cpf = sc.next();
+        
+        System.out.println(" Nivel: ");
+        String nivel = sc.next();
+        
+        Funcionario f2 = new Funcionario(nome,cpf,nivel);
         
         
         Sistema s = new Sistema();
+        
+        
+        
+        
         s.addFuncionario(f);
         s.addFuncionario(f2);
         System.out.println(s.exibirFuncionarios());   
-       
         s.removerFuncionario("123");
-        System.out.println(s.exibirFuncionarios()); 
+        System.out.println(s.exibirFuncionarios());
+        s.json();
+        
+        s.eAdm(f2);
+        System.out.println(s);
     }
     
 }

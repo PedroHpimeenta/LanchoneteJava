@@ -1,6 +1,12 @@
 
+import com.google.gson.Gson;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,9 +18,18 @@ import java.util.List;
  * @author pedro
  */
 public class Sistema {
+    
+    //
     private List <Funcionario> funcionarios = new ArrayList();
-    private List <Administrador> adminstradores = new ArrayList();
+    private List <Administrador> adm = new ArrayList();
+    
+    
     public void realizarLogin(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" digite o nome ");
+        String nome = sc.next();
+        System.out.println(" cpf: ");
+        String cpf = sc.next();
     };
     public void alterarCliente(){
     };
@@ -45,7 +60,7 @@ public class Sistema {
     };
      public boolean removerFuncionario(String id){
        for(Funcionario c : funcionarios){
-       if(c.getIdFuncionario().equalsIgnoreCase(id)){
+       if(c.getNivel().equalsIgnoreCase(id)){
           funcionarios.remove(c);
           return true;
        }
@@ -61,5 +76,23 @@ public class Sistema {
      }
      return s;
    }
-    
-}
+    public void json(){
+       Gson gson = new Gson();
+       
+        String json = gson.toJson(funcionarios);
+        
+        
+        try {
+		//Escreve Json convertido em arquivo chamado "file.json"
+		FileWriter writer = new FileWriter("C:\\Users\\pedro\\OneDrive\\Documentos\\NetBeansProjects\\TpPooLanchonete\\funcionarios.json");
+		writer.write(json);
+		writer.close();
+                
+            
+	} catch (IOException e) {
+                 
+		e.printStackTrace();
+	}
+    }
+      
+    }

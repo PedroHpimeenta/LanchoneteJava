@@ -7,7 +7,12 @@
  *
  * @author pedro
  */
-public class Administrador extends Usuario {
+public class Administrador extends Funcionario {
+
+    public Administrador(String cargo, String salario, String nivel, String nome, String cpf, String id, String endereco, String telefone, String senha) {
+        super(cargo, salario, nivel, nome, cpf, id, endereco, telefone, senha);
+    }
+    
     
     
     public void incluirCliente(){
