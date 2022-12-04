@@ -7,26 +7,22 @@
  *
  * @author pedro
  */
-public class  Funcionario extends Usuario{
+public class Funcionario extends Usuario{
 
     private String cargo;
     private String salario;
-    private String idFuncionario;
-   
+    private String nivel;
+    
+    
 
-    public Funcionario() {
-    }
-
-    public Funcionario(String cargo, String salario,String idFuncionario) {
+    public Funcionario(String cargo, String salario, String nivel, String nome, String cpf, String id, String endereco, String telefone, String senha) {
+        super(nome, cpf, id, endereco, telefone, senha);
         this.cargo = cargo;
         this.salario = salario;
-        this.idFuncionario =idFuncionario;
-        
+        this.nivel = nivel;
     }
-
-
-    
-    
+   
+      
   public  void alterarInformações(){
   
   };
@@ -47,17 +43,21 @@ public class  Funcionario extends Usuario{
         this.salario = salario;
     }
 
-    public String getIdFuncionario() {
-        return idFuncionario;
+    public String getNivel() {
+        return nivel;
     }
 
-    public void setIdFuncionario(String idFuncionario) {
-        this.idFuncionario = idFuncionario;
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
     @Override
     public String toString() {
-        return "Funcionario{" + "cargo=" + cargo + ", salario=" + salario + ", idFuncionario=" + idFuncionario + '}';
+        return "Funcionario{" + "cargo=" + cargo + ", salario=" + salario + ", nivel=" + nivel + '}';
     }
+   
+  
+
+   
     
 }
